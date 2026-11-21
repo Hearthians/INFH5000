@@ -1,0 +1,4 @@
+Flask>=3,<4
+jsonschema>=4.18,<5
+Pillow>=10,<14
+requests>=2.31,<3

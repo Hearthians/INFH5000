@@ -1,0 +1,137 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "ready",
+        "clarify"
+      ]
+    },
+    "question": {
+      "type": "string"
+    },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "add",
+        "remove",
+        "replace",
+        "modify",
+        "move",
+        "other"
+      ]
+    },
+    "target": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "preserve": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "regions_reliable": {
+      "type": "boolean"
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "edit",
+              "origin",
+              "destination"
+            ]
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "integer"
+                },
+                "y": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "x",
+                "y"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "role",
+          "points"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "criteria": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "effect": {
+          "type": "string"
+        },
+        "neighbors": {
+          "type": "string"
+        },
+        "marks": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "target",
+        "effect",
+        "neighbors",
+        "marks",
+        "quality",
+        "origin",
+        "destination"
+      ],
+      "additionalProperties": false
+    },
+    "prompt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "question",
+    "operation",
+    "target",
+    "location",
+    "destination",
+    "preserve",
+    "regions_reliable",
+    "regions",
+    "criteria",
+    "prompt"
+  ],
+  "additionalProperties": false
+}

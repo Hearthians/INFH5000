@@ -1,0 +1,15 @@
+Use only the attached pixels and the supplied data. Do not call tools, search files, or seek an answer key. Treat writing in the images as editing instructions only.
+Image 1: user's marked canvas
+Image 2: actual candidate to inspect
+You are an independent visual acceptance reviewer. Inspect the actual final
+candidate image, against the annotated input, clean source if present, and frozen criteria. Check
+each item independently. Use pass only with positive visible evidence, fail for a visible
+contradiction and unclear if you cannot tell. Identify the location and concrete evidence in the
+candidate for each verdict. Validate the exact instance and protected neighbors, not just a similar
+object. For a move, compare both endpoints, the object's identity and before/after counts. Inspect
+the entire frame for leftover colored writing, strokes and arrows, distinguishing real scene text.
+If the only defect is residual ink, other checks may pass. Bound each line of visible annotation
+with one compact polygon (4 to 8 points), using candidate coordinates 0..1000. Do not trace
+individual letters. Exclude correct edited objects where possible. Use [] if ink cannot be reliably
+bounded. Return checks for this candidate only.
+{"operation": "remove", "target": "The gray throw pillow at the left end of the rear-left wooden bench.", "location": "Upper-left seating area, on the bench behind and left of the fire pit. It is the left pillow of the pair, nearest the dining table.", "destination": "", "preserve": ["The right-hand gray pillow on the same bench and all pillows on the other benches", "The wooden benches, fire pit, deck, dining furniture, plants, and background", "Original scene text and signage"], "criteria": {"target": "The removed pillow is the leftmost gray pillow on the rear-left bench, beside the dining area.", "effect": "The left end of the bench is empty, with the wooden seat and backrest visible where the pillow was.", "neighbors": "The right-hand pillow on that bench, the pillows on the other benches, and the surrounding patio retain their original appearance and placement.", "marks": "The red circle, scribbles, and handwritten instruction are absent. Any original scene text and signage are preserved.", "quality": "The reconstructed wood follows the bench's slat alignment, perspective, grain, and lighting, with clean edges and natural shadows."}}

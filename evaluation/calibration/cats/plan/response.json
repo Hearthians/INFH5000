@@ -1,0 +1,48 @@
+{
+  "status": "ready",
+  "question": "",
+  "operation": "move",
+  "target": "The front-facing light tan and cream dog figurine, fourth from the left in the six-figurine row on the lower display shelf.",
+  "location": "On the lower display shelf, between the blue-gray striped dog on its left and the dark blue-and-tan dog on its right.",
+  "destination": "At the far right of the empty upper-right cubby, to the right of the vertical divider, with its paws resting on the upper display shelf.",
+  "preserve": [
+    "The moved figurine's size, forward-facing pose, pointed ears, tan-and-cream coloring, facial details, and ceramic finish.",
+    "The positions and appearance of the eight other figurines.",
+    "The wooden bookcase, shelf edges, vertical divider, books, original book-spine text, and warm lighting."
+  ],
+  "regions_reliable": true,
+  "regions": [
+    {
+      "role": "origin",
+      "points": [
+        {"x": 548, "y": 634},
+        {"x": 630, "y": 634},
+        {"x": 636, "y": 806},
+        {"x": 639, "y": 837},
+        {"x": 543, "y": 837},
+        {"x": 544, "y": 786}
+      ]
+    },
+    {
+      "role": "destination",
+      "points": [
+        {"x": 862, "y": 251},
+        {"x": 949, "y": 251},
+        {"x": 956, "y": 427},
+        {"x": 957, "y": 449},
+        {"x": 855, "y": 449},
+        {"x": 856, "y": 412}
+      ]
+    }
+  ],
+  "criteria": {
+    "target": "The moved figurine is the light tan and cream dog originally fourth from the left on the lower display shelf, identifiable by its pale chest and paws, upright ears, and front-facing pose.",
+    "effect": "The figurine has been relocated from the lower shelf to the upper-right cubby. There are nine dog figurines total, with four on the upper shelf and five on the lower shelf.",
+    "neighbors": "The blue-gray striped dog and the dark blue-and-tan dog still flank the empty lower-shelf spot. All eight other figurines retain their positions and appearance, and the bookcase, books, and original book-spine text are preserved.",
+    "marks": "The red circle, red arrow, and green circle are absent from the finished image.",
+    "quality": "The vacated area has continuous wood grain and an intact shelf edge. The moved dog is sharp, sits flush on the upper shelf, and casts a contact shadow consistent with the warm lighting.",
+    "origin": "The lower shelf has an empty gap at the former fourth position, with the wood backing and shelf surface reconstructed and no figurine remnants.",
+    "destination": "The same tan and cream figurine stands at the far right of the upper-right cubby, at its original scale and facing forward."
+  },
+  "prompt": "Move the light tan and cream ceramic dog figurine that is fourth from the left in the six-dog row on the lower display shelf. It is the front-facing dog with upright pointed ears and a pale chest and paws, between the blue-gray striped dog and the dark blue-and-tan dog. Place that same figurine at the far right of the empty upper-right cubby, to the right of the vertical divider and just inboard of the bookcase's right wall. Keep its original size, pose, and details. Set its paws on the upper shelf surface and match the warm lighting with a natural contact shadow. Restore the wood grain and shelf surface in its original spot, leaving an empty gap between its former neighbors. Keep all eight other figurines in their original positions, for nine figurines total. Preserve the bookcase, books, and original book-spine text. If the source contains a red circle, red arrow, or green circle, remove those annotation strokes completely."
+}

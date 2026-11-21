@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "target": {
+      "verdict": "fail",
+      "location": "Left end of the rear-left bench, nearest the dining table",
+      "evidence": "The gray pillow circled in the marked canvas is still resting against the left end of the bench."
+    },
+    "effect": {
+      "verdict": "fail",
+      "location": "Seat and backrest at the left end of the rear-left bench",
+      "evidence": "The remaining pillow still covers the requested area. The seat and backrest are exposed at the right end."
+    },
+    "neighbors": {
+      "verdict": "fail",
+      "location": "Right end of the rear-left bench, toward the fire pit",
+      "evidence": "The protected right-hand pillow is missing. The pillows on the other benches appear to remain in place."
+    },
+    "marks": {
+      "verdict": "pass",
+      "location": "Entire candidate frame, including the rear seating area and upper background",
+      "evidence": "The red circle, scribbles, and handwritten instruction are gone. The red flowers and the small red point in the rear window area are visible in both images."
+    },
+    "quality": {
+      "verdict": "pass",
+      "location": "Exposed wood at the right end of the rear-left bench",
+      "evidence": "The seat slats follow the bench perspective, and the exposed backrest has clean edges, consistent wood texture and lighting, and a natural shadow along its lower edge."
+    }
+  },
+  "ink_regions": []
+}

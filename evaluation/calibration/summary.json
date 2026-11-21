@@ -1,0 +1,60 @@
+[
+  {
+    "case": "patio",
+    "candidate": "patio-guided.png",
+    "checks": {
+      "target": "fail",
+      "effect": "fail",
+      "neighbors": "fail",
+      "marks": "pass",
+      "quality": "pass"
+    },
+    "expected": "effect=fail",
+    "matched": true,
+    "elapsed_s": 40.05
+  },
+  {
+    "case": "fern",
+    "candidate": "fern-guided.png",
+    "checks": {
+      "target": "pass",
+      "effect": "pass",
+      "neighbors": "pass",
+      "marks": "fail",
+      "quality": "pass"
+    },
+    "expected": "marks=fail",
+    "matched": true,
+    "elapsed_s": 51.34
+  },
+  {
+    "case": "cats",
+    "candidate": "cats-canvas.png",
+    "checks": {
+      "target": "fail",
+      "effect": "fail",
+      "neighbors": "fail",
+      "marks": "pass",
+      "quality": "fail",
+      "origin": "fail",
+      "destination": "fail"
+    },
+    "expected": "origin=fail",
+    "matched": true,
+    "elapsed_s": 44.59
+  },
+  {
+    "case": "headphones",
+    "candidate": "headphones-guided.png",
+    "checks": {
+      "target": "pass",
+      "effect": "pass",
+      "neighbors": "pass",
+      "marks": "pass",
+      "quality": "pass"
+    },
+    "expected": "all=pass",
+    "matched": true,
+    "elapsed_s": 50.51
+  }
+]

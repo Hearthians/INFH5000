@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+runs/
+/.tmuxhub/
+/.visualizations/
+.env
+.env.local
+
+# Machine-specific listener and deployment record
+/deployment/cis-lab/agent-qwen-campus.socket
+/deployment/verified.json
+
+# Generated evaluation files include local run URLs and job IDs
+/evaluation/batch.json
+/evaluation/review.html
+/evaluation/campus-access.json
+/evaluation/*browser*/verification.json
+/evaluation/*browser*/result.png
+/evaluation/*browser*/download.png

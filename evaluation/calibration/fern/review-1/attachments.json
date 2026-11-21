@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user's marked canvas",
+    "file": "../../../../paper-examples/assets/fern-canvas.webp"
+  },
+  {
+    "role": "actual candidate to inspect",
+    "file": "../../../../paper-examples/fern-guided.png"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "status": "ready",
+  "question": "",
+  "operation": "remove",
+  "target": "The gray throw pillow at the left end of the rear-left wooden bench.",
+  "location": "Upper-left seating area, on the bench behind and left of the fire pit. It is the left pillow of the pair, nearest the dining table.",
+  "destination": "",
+  "preserve": [
+    "The right-hand gray pillow on the same bench and all pillows on the other benches",
+    "The wooden benches, fire pit, deck, dining furniture, plants, and background",
+    "Original scene text and signage"
+  ],
+  "regions_reliable": false,
+  "regions": [],
+  "criteria": {
+    "target": "The removed pillow is the leftmost gray pillow on the rear-left bench, beside the dining area.",
+    "effect": "The left end of the bench is empty, with the wooden seat and backrest visible where the pillow was.",
+    "neighbors": "The right-hand pillow on that bench, the pillows on the other benches, and the surrounding patio retain their original appearance and placement.",
+    "marks": "The red circle, scribbles, and handwritten instruction are absent. Any original scene text and signage are preserved.",
+    "quality": "The reconstructed wood follows the bench's slat alignment, perspective, grain, and lighting, with clean edges and natural shadows.",
+    "origin": "",
+    "destination": ""
+  },
+  "prompt": "Remove the charcoal-gray throw pillow at the left end of the wooden bench behind and to the left of the round fire pit. That bench is nearest the dining table in the upper left. The target is the left pillow of the pair, closest to the dining table. Leave that seat empty and reconstruct the wooden seat and backrest behind the pillow, matching the angle, spacing, grain, color, and lighting of the existing slats. Keep the right-hand pillow on that bench and every other cushion in place. Preserve the benches, fire pit, deck, dining furniture, plants, background, and any original scene text or signage. If the red circle, scribbles, or handwritten instruction are present in the supplied image, remove them and restore the surfaces underneath."
+}

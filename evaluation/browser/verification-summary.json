@@ -1,0 +1,13 @@
+{
+  "status": "exhausted",
+  "best": 1,
+  "source_size": [
+    1600,
+    1067
+  ],
+  "download_sha256": "e76fe0e3bab9eebbbc33d1e1c36d54465b379e246c6fad2e21c078f05c914b85",
+  "downloaded_bytes": 1542504,
+  "browser_errors": [],
+  "restored_after_reload": true,
+  "resumed_after_error": true
+}

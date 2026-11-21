@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Agent–Qwen · 图像编辑画布</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/editor.js" defer></script>
+</head>
+<body>
+<header class="mast">
+  <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Agent–Qwen</div>
+  <details class="recover"><summary>找回任务</summary><form id="restore">
+    <label for="job-id">任务 ID</label><input id="job-id" required spellcheck="false" autocomplete="off" autocapitalize="none">
+    <button type="submit">打开任务</button>
+  </form></details>
+</header>
+<main>
+  <div class="page-title"><h1>图像编辑画布</h1><span>Qwen-Image 2.1</span></div>
+  <div class="workspace">
+    <section class="panel editor" aria-labelledby="editor-heading">
+      <div class="panel-heading"><h2 id="editor-heading">编辑输入</h2><span id="dimensions"></span></div>
+      <div class="input-row">
+        <label for="input-kind">图像类型</label>
+        <select id="input-kind"><option value="clean">干净原图</option><option value="marked">已有标注图</option></select>
+        <label id="replace-image" class="button" for="upload" hidden>换一张图</label>
+        <input id="upload" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp" aria-label="选择图片">
+      </div>
+      <div id="drawing-controls" hidden>
+        <div class="tools" role="group" aria-label="标注工具">
+          <button data-tool="circle" aria-pressed="true"><b aria-hidden="true">◯</b>圈选</button>
+          <button data-tool="pen" aria-pressed="false"><b aria-hidden="true">∿</b>涂写</button>
+          <button data-tool="text" aria-pressed="false"><b aria-hidden="true">T</b>文字</button>
+          <button data-tool="arrow" aria-pressed="false"><b aria-hidden="true">↗</b>移动箭头</button>
+          <label class="color">笔色<input id="color" type="color" value="#ea392e" aria-label="笔色"></label>
+          <button id="undo" disabled>↶ 撤销</button>
+        </div>
+        <label id="text-row" hidden>标注文字 <input id="mark-text" placeholder="例如：改成蓝色" enterkeyhint="done"></label>
+        <p id="tool-hint" aria-live="polite">拖动圈出要编辑的对象或区域。</p>
+      </div>
+      <div id="surface" class="surface">
+        <div id="empty"><div class="empty-icon" aria-hidden="true">＋</div>
+          <label class="button" for="upload">选择图片</label>
+          <small><span class="drop-hint">也可以拖入图片 · </span>PNG / JPEG / WebP</small>
+        </div>
+        <canvas id="drawing" hidden aria-label="在原图上绘制标注"></canvas>
+        <img id="saved-canvas" alt="该任务的完整标注图" hidden>
+      </div>
+      <div id="edit-controls" class="edit-controls" hidden><label for="note">补充指令 <small>可选</small></label>
+        <textarea id="note" rows="2" placeholder="例如：把圈中的椅子改为天鹅绒蓝色"></textarea>
+        <div class="submit-row"><label for="max-tries">最多生成 <input id="max-tries" type="number" value="3" min="1" step="1" required> 次</label>
+        <button id="generate" class="primary" disabled><span id="generate-label">开始编辑</span> <span aria-hidden="true">→</span></button></div>
+      </div>
+    </section>
+    <section id="review-panel" class="panel review" aria-labelledby="review-heading" tabindex="-1">
+      <div class="panel-heading"><h2 id="review-heading">候选与验收</h2><span id="status" class="status">等待提交</span></div>
+      <div id="idle" class="idle">提交画布后，可在这里查看候选图和逐项验收意见。</div>
+      <div id="job" hidden>
+        <div class="job-line"><span id="progress" role="status"></span><button id="copy" aria-label="复制任务 ID" title="复制完整任务 ID"></button></div>
+        <div id="issue" hidden></div>
+        <form id="clarify" hidden><label for="answer" id="question"></label>
+          <input id="answer" required><button type="submit">补充说明</button></form>
+        <button id="reconnect" hidden>重新连接任务</button>
+        <div id="result" hidden>
+          <div class="candidate-select"><label for="attempt">查看候选</label> <select id="attempt"></select></div>
+          <div class="media-switch" role="group" aria-label="对照标注与候选图">
+            <button id="show-candidate" type="button" aria-pressed="true">候选图</button>
+            <button id="show-input" type="button" aria-pressed="false">标注输入</button>
+          </div>
+          <a id="candidate-preview" target="_blank" rel="noopener" aria-label="在新标签页查看候选原图">
+            <img id="candidate" alt="Qwen 实际生成的完整候选图">
+          </a>
+          <div class="result-line"><span id="choice"></span><a id="download" class="button" download>下载候选图 ↓</a></div>
+          <p id="reason" hidden></p>
+          <ul id="checks"></ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <p id="notice" role="alert" hidden></p>
+</main>
+</body></html>

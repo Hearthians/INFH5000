@@ -1,0 +1,48 @@
+{
+  "status": "ready",
+  "question": "",
+  "operation": "modify",
+  "target": "The viewer-right earcup of the beige headphones, third pair from the left.",
+  "location": "Lower center-right, in the cubby immediately left of the large dark headphones. The selected earcup faces the viewer and sits just left of the wooden divider.",
+  "destination": "",
+  "preserve": [
+    "The beige headband and viewer-left earcup of the selected pair",
+    "The selected earcup’s shape, controls, metallic connector, and material textures",
+    "The neighboring headphones, wooden shelving, books, lighting, and original scene text"
+  ],
+  "regions_reliable": true,
+  "regions": [
+    {
+      "role": "edit",
+      "points": [
+        {"x": 526, "y": 500},
+        {"x": 548, "y": 486},
+        {"x": 572, "y": 482},
+        {"x": 601, "y": 491},
+        {"x": 602, "y": 622},
+        {"x": 589, "y": 665},
+        {"x": 569, "y": 693},
+        {"x": 548, "y": 707},
+        {"x": 531, "y": 712},
+        {"x": 513, "y": 709},
+        {"x": 501, "y": 700},
+        {"x": 494, "y": 681},
+        {"x": 485, "y": 665},
+        {"x": 481, "y": 642},
+        {"x": 483, "y": 611},
+        {"x": 492, "y": 572},
+        {"x": 507, "y": 535}
+      ]
+    }
+  ],
+  "criteria": {
+    "target": "The recolored component is the viewer-facing right earcup of the third headphone pair from the left, immediately left of the divider beside the far-right dark pair.",
+    "effect": "The selected earcup’s beige shell and visible cushion are deep teal, with the original controls and metallic connector intact.",
+    "neighbors": "The selected pair’s headband and opposite earcup retain their beige finish, and the neighboring headphones, shelf, books, and original scene text are preserved.",
+    "marks": "The final image is free of the red handwritten instruction and circle.",
+    "quality": "Deep teal follows the earcup’s contours with crisp edges and natural highlights, shadows, and cushion texture. The wood and adjacent earcup are free of teal spill.",
+    "origin": "",
+    "destination": ""
+  },
+  "prompt": "Recolor only the viewer-right earcup of the beige over-ear headphones in the third cubby from the left. It is the large, outward-facing oval earcup in the lower center-right, immediately left of the wooden divider beside the far-right dark headphones. Change its beige shell and visible cushion to deep teal. Preserve the earcup’s shape, controls, metallic connector, fabric texture, and natural highlights and shadows. Keep this pair’s headband and opposite earcup beige. Preserve the other headphones, wooden shelving, books, framing, lighting, and any original scene text. The final image should be free of red handwriting and the red circle. If the source contains those marks, remove them and restore the underlying surfaces."
+}

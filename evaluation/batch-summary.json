@@ -1,0 +1,143 @@
+{
+  "cases": [
+    {
+      "case": "rose",
+      "status": "passed",
+      "generations": 1,
+      "first_pass": true,
+      "best": 1,
+      "remaining": {},
+      "question": null,
+      "error": null,
+      "elapsed_s": 187.76
+    },
+    {
+      "case": "patio",
+      "status": "exhausted",
+      "generations": 3,
+      "first_pass": false,
+      "best": 1,
+      "remaining": {
+        "target": {
+          "verdict": "fail",
+          "location": "Outer left end of the rear-left bench, behind and left of the fire pit",
+          "evidence": "The charcoal-gray pillow inside the original red circle is still visible immediately left of the pillow nearest the tall grasses."
+        },
+        "effect": {
+          "verdict": "fail",
+          "location": "Left seat and backrest of the rear-left bench",
+          "evidence": "The pillow still rests on the seat and covers the backrest, so the left end of the bench remains occupied."
+        },
+        "quality": {
+          "verdict": "unclear",
+          "location": "Wood behind and beneath the outer left pillow on the rear-left bench",
+          "evidence": "The retained pillow conceals the area where reconstructed wood would need to be inspected for slat alignment, grain, perspective, and lighting."
+        }
+      },
+      "question": null,
+      "error": null,
+      "elapsed_s": 289.18
+    },
+    {
+      "case": "fern",
+      "status": "exhausted",
+      "generations": 3,
+      "first_pass": false,
+      "best": 1,
+      "remaining": {
+        "marks": {
+          "verdict": "fail",
+          "location": "Upper storefront glass, across most of the frame",
+          "evidence": "The red handwritten instruction “replace to tall potted fern” remains fully visible. The red selection oval is gone, and the foreground boot labels and background signage are still visible."
+        }
+      },
+      "question": null,
+      "error": null,
+      "elapsed_s": 323.6
+    },
+    {
+      "case": "headphones",
+      "status": "passed",
+      "generations": 3,
+      "first_pass": false,
+      "best": 3,
+      "remaining": {},
+      "question": null,
+      "error": null,
+      "elapsed_s": 232.26
+    },
+    {
+      "case": "cats",
+      "status": "exhausted",
+      "generations": 3,
+      "first_pass": false,
+      "best": 2,
+      "remaining": {
+        "quality": {
+          "verdict": "fail",
+          "location": "Front edge of the upper shelf beneath the moved dog's paws",
+          "evidence": "The old spot blends into the surrounding wood and the dog is comparable in size to the other figurines. Both front paws overlap the shelf fascia and reach almost to its bottom edge, making them look as if they hang over the lip."
+        }
+      },
+      "question": null,
+      "error": null,
+      "elapsed_s": 269.96
+    },
+    {
+      "case": "suitcase",
+      "status": "passed",
+      "generations": 1,
+      "first_pass": true,
+      "best": 1,
+      "remaining": {},
+      "question": null,
+      "error": null,
+      "elapsed_s": 77.8
+    },
+    {
+      "case": "dog",
+      "status": "passed",
+      "generations": 1,
+      "first_pass": true,
+      "best": 1,
+      "remaining": {},
+      "question": null,
+      "error": null,
+      "elapsed_s": 96.5
+    },
+    {
+      "case": "market",
+      "status": "passed",
+      "generations": 2,
+      "first_pass": false,
+      "best": 2,
+      "remaining": {},
+      "question": null,
+      "error": null,
+      "elapsed_s": 183.52
+    },
+    {
+      "case": "facade",
+      "status": "exhausted",
+      "generations": 3,
+      "first_pass": false,
+      "best": 1,
+      "remaining": {
+        "neighbors": {
+          "verdict": "fail",
+          "location": "Small posters on the cream storefront door below the awning.",
+          "evidence": "The masonry pier, far-left foliage, window structure, and large BAKKAL banner remain recognizable. The original “KASAP ve İNEGÖL” lettering above “KÖFTE BULUNUR” is visibly distorted on both door posters."
+        }
+      },
+      "question": null,
+      "error": null,
+      "elapsed_s": 202.73
+    }
+  ],
+  "case_count": 9,
+  "first_pass": 3,
+  "final_pass": 5,
+  "mean_generations": 2.222,
+  "mean_seconds": 207.03,
+  "wall_seconds": 703.46
+}

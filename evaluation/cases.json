@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {"id":"rose","canvas":"../paper-examples/assets/rose-canvas.webp"},
+    {"id":"patio","canvas":"../paper-examples/assets/patio-canvas.webp"},
+    {"id":"fern","canvas":"../paper-examples/assets/fern-canvas.webp"},
+    {"id":"headphones","canvas":"../paper-examples/assets/headphones-canvas.webp"},
+    {"id":"cats","canvas":"../paper-examples/assets/cats-canvas.webp"},
+    {"id":"suitcase","canvas":"../paper-examples/assets/method-annotated.webp","source":"../paper-examples/assets/method-source.webp"},
+    {"id":"dog","canvas":"holdout/dog.webp"},
+    {"id":"market","canvas":"holdout/market.webp"},
+    {"id":"facade","canvas":"holdout/facade.webp"}
+  ]
+}

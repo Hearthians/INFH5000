@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "target": {
+      "verdict": "pass",
+      "location": "Lower center-right, immediately left of the divider beside the far-right dark headphones",
+      "evidence": "The deep teal earcup faces the viewer and connects to the beige headband of the third pair from the left."
+    },
+    "effect": {
+      "verdict": "pass",
+      "location": "Outer shell, cushion, and upper rim of the selected earcup",
+      "evidence": "The shell and visible cushion are deep teal. The raised control and silver connector remain distinct and intact."
+    },
+    "neighbors": {
+      "verdict": "pass",
+      "location": "Across the four cubbies and the surrounding shelves",
+      "evidence": "The selected pair’s headband and viewer-left earcup remain beige. The three neighboring pairs, wood grain, books and visible spine lettering, and directional lighting are preserved."
+    },
+    "marks": {
+      "verdict": "pass",
+      "location": "Entire frame, including the lower-left instruction area and the area around the edited earcup",
+      "evidence": "The shelf and headphones are clear of red lettering, circle fragments, and stray annotation strokes."
+    },
+    "quality": {
+      "verdict": "pass",
+      "location": "Edited earcup perimeter and its boundaries with the beige earcup and wooden divider",
+      "evidence": "The teal follows the shell and cushion contours with crisp edges. The shell retains a natural highlight and shadow gradient, the cushion weave is visible, and the wood and adjacent earcup are free of teal spill."
+    }
+  },
+  "ink_regions": []
+}

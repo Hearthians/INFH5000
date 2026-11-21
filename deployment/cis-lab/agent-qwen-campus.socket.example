@@ -1,0 +1,8 @@
+[Unit]
+Description=Agent-Qwen campus web listener
+
+[Socket]
+ListenStream=192.0.2.10:7865
+
+[Install]
+WantedBy=sockets.target

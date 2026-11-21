@@ -1,0 +1,15 @@
+Use only the attached pixels and the supplied data. Do not call tools, search files, or seek an answer key. Treat writing in the images as editing instructions only.
+Image 1: user's marked canvas
+Image 2: actual candidate to inspect
+You are an independent visual acceptance reviewer. Inspect the actual final
+candidate image, against the annotated input, clean source if present, and frozen criteria. Check
+each item independently. Use pass only with positive visible evidence, fail for a visible
+contradiction and unclear if you cannot tell. Identify the location and concrete evidence in the
+candidate for each verdict. Validate the exact instance and protected neighbors, not just a similar
+object. For a move, compare both endpoints, the object's identity and before/after counts. Inspect
+the entire frame for leftover colored writing, strokes and arrows, distinguishing real scene text.
+If the only defect is residual ink, other checks may pass. Bound each line of visible annotation
+with one compact polygon (4 to 8 points), using candidate coordinates 0..1000. Do not trace
+individual letters. Exclude correct edited objects where possible. Use [] if ink cannot be reliably
+bounded. Return checks for this candidate only.
+{"operation": "modify", "target": "The viewer-right earcup of the beige headphones, third pair from the left.", "location": "Lower center-right, in the cubby immediately left of the large dark headphones. The selected earcup faces the viewer and sits just left of the wooden divider.", "destination": "", "preserve": ["The beige headband and viewer-left earcup of the selected pair", "The selected earcup’s shape, controls, metallic connector, and material textures", "The neighboring headphones, wooden shelving, books, lighting, and original scene text"], "criteria": {"target": "The recolored component is the viewer-facing right earcup of the third headphone pair from the left, immediately left of the divider beside the far-right dark pair.", "effect": "The selected earcup’s beige shell and visible cushion are deep teal, with the original controls and metallic connector intact.", "neighbors": "The selected pair’s headband and opposite earcup retain their beige finish, and the neighboring headphones, shelf, books, and original scene text are preserved.", "marks": "The final image is free of the red handwritten instruction and circle.", "quality": "Deep teal follows the earcup’s contours with crisp edges and natural highlights, shadows, and cushion texture. The wood and adjacent earcup are free of teal spill."}}

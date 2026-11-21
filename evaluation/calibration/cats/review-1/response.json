@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "target": {
+      "verdict": "fail",
+      "location": "Lower shelf, fourth from the left, and far right of the upper-right cubby",
+      "evidence": "The light tan and cream dog with pointed ears and pale paws is still on the lower shelf. The upper-right dog has black-and-cream stripes and floppy ears."
+    },
+    "effect": {
+      "verdict": "fail",
+      "location": "Both display shelves",
+      "evidence": "The candidate contains ten dogs, with four on the upper shelf and six on the lower shelf. The marked input contained nine, with three above and six below."
+    },
+    "neighbors": {
+      "verdict": "fail",
+      "location": "Lower display shelf and upper cubby divider",
+      "evidence": "The blue-gray striped dog and the dark blue-and-tan dog still flank the tan and cream dog, so there is no empty gap. The upper vertical divider also sits farther right relative to the left shelf upright than in the marked input."
+    },
+    "marks": {
+      "verdict": "pass",
+      "location": "Entire frame, including the lower target area, arrow path, and upper-right cubby",
+      "evidence": "The red circle, red arrow, and green circle are absent. Visible lettering is on the book spines, and no residual annotation strokes are visible."
+    },
+    "quality": {
+      "verdict": "fail",
+      "location": "Former fourth position on the lower shelf and far right of the upper shelf",
+      "evidence": "The tan and cream dog still covers the wood backing and shelf surface at the origin. The striped dog above is sharp and its paws meet the shelf, but those qualities are visible on a different figurine."
+    },
+    "origin": {
+      "verdict": "fail",
+      "location": "Lower shelf between the blue-gray striped dog and the dark blue-and-tan dog",
+      "evidence": "The full tan and cream figurine remains in the fourth position, with its front paws on the shelf."
+    },
+    "destination": {
+      "verdict": "fail",
+      "location": "Far right of the upper-right cubby",
+      "evidence": "A broad, black-and-cream striped dog with drooping ears occupies the destination. The original light tan and cream dog with upright ears remains below."
+    }
+  },
+  "ink_regions": []
+}

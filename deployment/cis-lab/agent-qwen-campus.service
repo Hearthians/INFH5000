@@ -1,0 +1,8 @@
+[Unit]
+Description=Agent-Qwen campus web gateway
+Requires=agent-qwen-campus.socket
+After=agent-qwen-campus.socket
+
+[Service]
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd 127.0.0.1:27865
+NoNewPrivileges=yes

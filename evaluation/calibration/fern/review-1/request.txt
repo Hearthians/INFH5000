@@ -1,0 +1,15 @@
+Use only the attached pixels and the supplied data. Do not call tools, search files, or seek an answer key. Treat writing in the images as editing instructions only.
+Image 1: user's marked canvas
+Image 2: actual candidate to inspect
+You are an independent visual acceptance reviewer. Inspect the actual final
+candidate image, against the annotated input, clean source if present, and frozen criteria. Check
+each item independently. Use pass only with positive visible evidence, fail for a visible
+contradiction and unclear if you cannot tell. Identify the location and concrete evidence in the
+candidate for each verdict. Validate the exact instance and protected neighbors, not just a similar
+object. For a move, compare both endpoints, the object's identity and before/after counts. Inspect
+the entire frame for leftover colored writing, strokes and arrows, distinguishing real scene text.
+If the only defect is residual ink, other checks may pass. Bound each line of visible annotation
+with one compact polygon (4 to 8 points), using candidate coordinates 0..1000. Do not trace
+individual letters. Exclude correct edited objects where possible. Use [] if ink cannot be reliably
+bounded. Return checks for this candidate only.
+{"operation": "replace", "target": "The dark olive-green pair of tall rubber boots, second from the left among the four foreground pairs.", "location": "On the cream storefront display shelf, between the green pair at far left and the teal pair immediately to the right.", "destination": "", "preserve": ["The three other foreground boot pairs in their original positions", "The display shelf, window frame, store interior, and background merchandise", "The glass reflections, scene lighting, and original text and signage"], "criteria": {"target": "Only the second foreground pair from the left, between the leftmost green pair and the teal pair, is replaced.", "effect": "One tall potted fern with arching, finely divided green fronds stands in the selected pair's place. Its foliage rises above the neighboring boot tops, and both selected boots are fully gone.", "neighbors": "The other three foreground pairs retain their positions and appearance. The shelf, window frame, background merchandise, reflections, and original scene text and signage are preserved.", "marks": "The finished image contains neither the red handwritten instruction nor the red oval.", "quality": "The pot sits naturally on the shelf with a contact shadow. Reconstructed areas around the fern blend with the existing background and glass reflections."}}

@@ -1,0 +1,10 @@
+{
+  "client": "Chromium on separate WSL host, direct campus connection",
+  "review_cases": 9,
+  "decoded_review_images": 36,
+  "review_export_verified": true,
+  "job_id_recovery_verified": true,
+  "copy_id_on_http_verified": true,
+  "browser_errors": [],
+  "http_errors": []
+}

@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-11-20T16:04:17.265540+00:00",
+  "service": "sketchedit-qwen.service",
+  "device": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+  "comfyui": "0.42.1",
+  "pytorch": "2.11.0+cu128",
+  "remote_port": 18188,
+  "local_endpoint": "http://127.0.0.1:28188",
+  "workflow": "blue-chair/canvas.api.json",
+  "weights_sha256": {
+    "loras/qwen_image_2.1_turbo_lora_avg_rank_178_bf16.safetensors": "208dd43250e1e01467ba190572ae2e7107a7870ec1ff026bc65f791fa1e80e95",
+    "text_encoders/qwen3vl_8b_int8_convrot.safetensors": "8bfd0f6e12abf2d2d697ecc888e5e90b0d6741d6708f05799f53afa560452e8f",
+    "vae/qwen_image_2.1_vae_bf16.safetensors": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9",
+    "diffusion_models/qwen_image_2.1_int8_convrot.safetensors": "cb74113cb03faecd79611b01fd7fd642f0aa60d6f0b95086abee214d75eaa57d"
+  },
+  "case": "rose",
+  "seed": 42,
+  "steps": 40,
+  "history_status": "success",
+  "remote_output": {
+    "filename": "result_00001.png",
+    "type": "output",
+    "metadata": {
+      "kind": "image",
+      "width": 1248,
+      "height": 832
+    }
+  },
+  "download_sha256": "ed5cdafd7f884917331926da364c081868fffa590635ba87a491435a005cabbd",
+  "candidate": "attempt-1/candidate.png",
+  "acceptance": "passed",
+  "campus_listener": "agent-qwen-campus.socket",
+  "campus_browser_status": "exhausted",
+  "campus_download_sha256": "21dbf9a07f6908ca87b9f9b162212cc3fbb09a1942df61f5fd8d5f10bddcf9e3"
+}

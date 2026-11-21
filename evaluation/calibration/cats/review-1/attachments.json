@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user's marked canvas",
+    "file": "../../../../paper-examples/assets/cats-canvas.webp"
+  },
+  {
+    "role": "actual candidate to inspect",
+    "file": "../../../../paper-examples/cats-canvas.png"
+  }
+]

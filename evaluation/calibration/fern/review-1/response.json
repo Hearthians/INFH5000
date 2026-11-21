@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "target": {
+      "verdict": "pass",
+      "location": "Second foreground position from the left on the cream shelf, between the green and teal boot pairs",
+      "evidence": "The fern occupies the marked olive-green pair’s spot. The other three foreground boot pairs remain in their original order and positions."
+    },
+    "effect": {
+      "verdict": "pass",
+      "location": "Center-left of the storefront display",
+      "evidence": "One potted fern with arching, finely divided green fronds stands where the selected pair was. Its tallest fronds rise above both neighboring boot tops, and both selected boots are fully gone."
+    },
+    "neighbors": {
+      "verdict": "pass",
+      "location": "The three remaining foreground boot pairs and the surrounding storefront",
+      "evidence": "The far-left green pair, adjacent teal pair, and far-right blue pair retain their spacing, colors, silhouettes, buckles, and labels. The cream shelf, dark window frame, background boot displays, reflected building and lights, and blurred storefront signage remain visible in corresponding positions."
+    },
+    "marks": {
+      "verdict": "fail",
+      "location": "Across the upper third of the storefront window",
+      "evidence": "The red handwritten instruction “replace to tall potted fern” remains visible across the glass. The red oval around the original boot pair has been removed."
+    },
+    "quality": {
+      "verdict": "pass",
+      "location": "At the pot’s base and around the fern’s fronds",
+      "evidence": "The pot rests on the shelf with a subtle contact shadow beneath it. The store interior and glass reflections visible around and between the fronds blend into the surrounding scene."
+    }
+  },
+  "ink_regions": [
+    [
+      {"x": 65, "y": 226},
+      {"x": 925, "y": 226},
+      {"x": 925, "y": 382},
+      {"x": 65, "y": 382}
+    ]
+  ]
+}

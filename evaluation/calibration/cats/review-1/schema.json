@@ -1,0 +1,222 @@
+{
+  "type": "object",
+  "properties": {
+    "checks": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "effect": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "neighbors": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "marks": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "quality": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "origin": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "destination": {
+          "type": "object",
+          "properties": {
+            "verdict": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "unclear"
+              ]
+            },
+            "location": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verdict",
+            "location",
+            "evidence"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "target",
+        "effect",
+        "neighbors",
+        "marks",
+        "quality",
+        "origin",
+        "destination"
+      ],
+      "additionalProperties": false
+    },
+    "ink_regions": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "integer"
+            },
+            "y": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "required": [
+    "checks",
+    "ink_regions"
+  ],
+  "additionalProperties": false
+}

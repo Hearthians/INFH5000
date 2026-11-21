@@ -1,0 +1,14 @@
+{
+  "example": "suitcase",
+  "status": "passed",
+  "best": 1,
+  "source_size": [
+    1448,
+    1086
+  ],
+  "download_sha256": "66cf010f58c81f0bf4591613d21dbcf7a323fc861cbc1a5553a20eccffdd84de",
+  "downloaded_bytes": 2055323,
+  "browser_errors": [],
+  "restored_after_reload": true,
+  "resumed_after_error": false
+}

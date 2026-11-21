@@ -1,0 +1,14 @@
+[Unit]
+Description=Agent-Qwen local editing canvas
+Wants=agent-qwen-tunnel.service
+After=agent-qwen-tunnel.service
+
+[Service]
+WorkingDirectory=%h/work/INFH5000
+Environment=PATH=%h/.local/bin:%h/.local/opt/node/bin:/usr/local/bin:/usr/bin:/bin
+EnvironmentFile=-%h/.config/agent-qwen/network.env
+ExecStart=%h/work/INFH5000/.venv/bin/python -m agent_qwen serve
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

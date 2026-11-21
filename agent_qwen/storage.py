@@ -12,6 +12,8 @@ from pathlib import Path
 
 from PIL import Image, ImageOps
 
+from .proposals import check_proposal
+
 
 def write_json(path, value):
     with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as stream:
@@ -60,7 +62,7 @@ def check_strokes(data, size):
                     raise ValueError("Stroke coordinates must be finite and inside the image.")
 
 
-def create_job(root, canvas, *, source=None, ink=None, strokes=None, note="", max_tries=3):
+def create_job(root, canvas, *, source=None, ink=None, strokes=None, note="", max_tries=3, proposal=None):
     if type(max_tries) is not int or max_tries < 1:
         raise ValueError("max_tries must be a positive integer.")
     root.mkdir(parents=True, exist_ok=True)
@@ -85,6 +87,9 @@ def create_job(root, canvas, *, source=None, ink=None, strokes=None, note="", ma
                      has_ink=ink is not None, note=note, answers=[], question=None, intent=None,
                      attempts=[], best=None, remaining={}, generation_count=0,
                      created_at=time.time(), elapsed_s=0, error=None)
+        if proposal is not None:
+            state["proposal"] = check_proposal(proposal)
+            write_json(inputs / "proposal.json", proposal)
         write_json(directory / "state.json", state)
         directory.rename(root / job_id)
     except BaseException:

@@ -1,15 +1,18 @@
 import json
 import re
+import tempfile
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 from flask import Flask, abort, jsonify, request, send_file
 from PIL import Image
 
 from .engine import Runner, queue_continuation
-from .storage import create_job, job_path, read_json
+from .storage import check_strokes, create_job, job_path, read_json, save_input
+from .vision import CodexVision, InvalidResponse
 
 
-def create_app(root, runner=Runner):
+def create_app(root, runner=Runner, vision_factory=CodexVision):
     app = Flask(__name__)
     app.config["MAX_CONTENT_LENGTH"] = 128 * 1024 * 1024
     root.mkdir(parents=True, exist_ok=True)
@@ -26,6 +29,7 @@ def create_app(root, runner=Runner):
     @app.errorhandler(404)
     @app.errorhandler(409)
     @app.errorhandler(413)
+    @app.errorhandler(502)
     def error_response(error):
         return jsonify(error=error.description), error.code
 
@@ -51,6 +55,34 @@ def create_app(root, runner=Runner):
             abort(404)
         return send_file(file)
 
+    @app.post("/api/proposals")
+    def propose():
+        if "canvas" not in request.files:
+            abort(400, "请先上传图片")
+        with tempfile.TemporaryDirectory(prefix="canvas-proposals-") as temp:
+            folder = Path(temp)
+            canvas = folder / "canvas.png"
+            images = [("current image with any user annotations", canvas)]
+            try:
+                size = save_input(request.files["canvas"], canvas, "RGB")
+                if "source" in request.files:
+                    original = folder / "source.png"
+                    if save_input(request.files["source"], original, "RGB") != size:
+                        raise ValueError("原图与标注图的尺寸须一致")
+                    images.append(("clean original before any annotations", original))
+                strokes = (json.loads(request.form["strokes"]) if "strokes" in request.form
+                           else {"width": size[0], "height": size[1], "strokes": []})
+                check_strokes(strokes, size)
+            except (ValueError, OSError, Image.DecompressionBombError) as exc:
+                abort(400, str(exc))
+            context = {"note": request.form.get("note", ""), "strokes": strokes}
+            try:
+                result = vision_factory().suggest(folder, images, context)
+            except (InvalidResponse, RuntimeError, OSError) as exc:
+                app.logger.warning("Proposal generation failed: %s", exc)
+                abort(502, "暂时无法生成可用方案，请重试。")
+            return jsonify(result)
+
     @app.post("/api/jobs")
     def submit():
         if "canvas" not in request.files:
@@ -59,6 +91,7 @@ def create_app(root, runner=Runner):
             job = create_job(root, request.files["canvas"], source=request.files.get("source"),
                              ink=request.files.get("ink"), note=request.form.get("note", ""),
                              strokes=json.loads(request.form["strokes"]) if "strokes" in request.form else None,
+                             proposal=json.loads(request.form["proposal"]) if "proposal" in request.form else None,
                              max_tries=int(request.form.get("max_tries", 3)))
         except (ValueError, OSError, Image.DecompressionBombError) as exc:
             abort(400, str(exc))

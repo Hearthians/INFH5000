@@ -6,6 +6,7 @@ import time
 import uuid
 
 from .comfy import Comfy, SubmissionRejected
+from .proposals import FRAME, step_instruction
 from .regions import composite, crop_input, edit_polygons, valid_polygon
 from .storage import read_json, user_images, write_json
 from .vision import CodexVision, check_intent, review_with_retry
@@ -66,7 +67,7 @@ def new_attempt(state):
             ink = best["review"]["ink_regions"]
             polygons = ink if all(valid_polygon(p) for p in ink) else []
             reason = f"Only annotation ink failed on attempt {parent}. Clean that candidate."
-        elif state["has_source"]:
+        elif state["has_source"] and len(state["intent"].get("approved_steps", [])) <= 1:
             polygons = edit_polygons(state["intent"])
             if polygons:
                 mode = "crop"
@@ -120,11 +121,16 @@ class Runner:
             self.save("planning")
             context = dict(note=state["note"], clarifications=state["answers"],
                            strokes=read_json(folder / "inputs/strokes.json"), source_available=state["has_source"])
+            if state.get("proposal"):
+                context["approved_steps"] = state["proposal"]["steps"]
+                context["coordinate_system"] = FRAME
             intent = check_intent(self.vision.plan(folder / f"plan-{len(state['answers'])+1}", images, context))
             if intent["status"] == "clarify":
                 state.update(status="needs_clarification", question=intent["question"])
                 self.save("clarification")
                 return
+            if state.get("proposal"):
+                intent = {**intent, "approved_steps": state["proposal"]["steps"]}
             state["intent"] = intent
             self.save("planned")
         while True:
@@ -174,6 +180,10 @@ class Runner:
                            last_prompt=last["prompt"], mode=attempt["mode"], input=attempt["input"],
                            reason=attempt["reason"], crop_in_source_pixels=attempt["crop"])
             prompt = self.vision.revise(sub / "revision", attachments, context)
+        if attempt["mode"] == "original" and state["intent"].get("approved_steps"):
+            steps = state["intent"]["approved_steps"]
+            prompt += "\n" + FRAME + "\n" + "\n".join(
+                f"{index}. {step_instruction(step)}" for index, step in enumerate(steps, 1))
         if attempt["mode"] == "cleanup":
             prompt += " Remove only instruction ink and lettering. Preserve the completed edit and all scene details."
         else:
